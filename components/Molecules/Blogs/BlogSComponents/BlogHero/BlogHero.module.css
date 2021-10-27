@@ -16,16 +16,27 @@
   min-height: 100vh;
 }
 
+ .heroImg {
+    display: block;
+    width: 100%;
+  }
+
 @media screen and (min-width: 800px) {
   .BlogHero::before {
     background-size: contain;
     height: 100%;
   }
   .heroflex {
-      display: flex;
-      flex-direction: row-reverse;
-      justify-content: space-between;
-      align-items: center;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .heroChild1 {
+    width: 40%;
+    display: block;
+  }
+   .heroChild2 {
+    width: 50%;
   }
 }
-
