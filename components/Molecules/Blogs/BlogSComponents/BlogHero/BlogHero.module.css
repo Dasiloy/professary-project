@@ -13,18 +13,16 @@
 
 .BlogHero {
   position: relative;
-  min-height: 100vh;
 }
 
- .heroImg {
-    display: block;
-    width: 100%;
-  }
+.heroImg {
+  display: block;
+  width: 100%;
+}
 
-@media screen and (min-width: 800px) {
-  .BlogHero::before {
-    background-size: contain;
-    height: 100%;
+@media screen and (min-width: 768px) {
+  .BlogHero {
+    margin-bottom: 120px !important;
   }
   .heroflex {
     display: flex;
@@ -36,7 +34,14 @@
     width: 40%;
     display: block;
   }
-   .heroChild2 {
+  .heroChild2 {
     width: 50%;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .BlogHero::before {
+    background-size: contain;
+    height: 100%;
   }
 }

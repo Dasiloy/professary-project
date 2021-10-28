@@ -128,27 +128,24 @@ export default function Footer() {
             </Stack>
           </Stack>
           <Stack align={'flex-start'}>
-            <ListHeader>Company</ListHeader>
-            <ListItem href={'#'}>Blog</ListItem>
-            <ListItem href={'#'}>Contact us</ListItem>
-            <ListItem href={'#'}>Pricing</ListItem>
-            <ListItem href={'#'}>Testimonials</ListItem>
+            <ListHeader>Professary</ListHeader>
+            <ListItem href={'#'}>Home</ListItem>
+            <ListItem href={'#'}>About</ListItem>
+            <ListItem href={'#'}>Features</ListItem>
+            
           </Stack>
           <Stack align={'flex-start'}>
             <ListHeader>Support</ListHeader>
-            <ListItem href={'#'}>Help Center</ListItem>
-            <ListItem href={'#'}>Terms of Service</ListItem>
-            <ListItem href={'#'}>Legal</ListItem>
-            <ListItem href={'#'}>Privacy Policy</ListItem>
-            <ListItem href={'#'}>Satus</ListItem>
+            <ListItem href={'#'}>FAQ</ListItem>
+            <ListItem href={'#'}>Customer</ListItem>
+            <ListItem href={'#'}>Zendesk</ListItem>
+            <ListItem href={'#'}>Resources</ListItem>
           </Stack>
           <Stack align={'flex-start'}>
-            <ListHeader>Support</ListHeader>
-            <ListItem href={'#'}>Help Center</ListItem>
-            <ListItem href={'#'}>Terms of Service</ListItem>
-            <ListItem href={'#'}>Legal</ListItem>
-            <ListItem href={'#'}>Privacy Policy</ListItem>
-            <ListItem href={'#'}>Satus</ListItem>
+            <ListHeader>Developers</ListHeader>
+            <ListItem href={'#'}>Docuentation</ListItem>
+            <ListItem href={'#'}>APi</ListItem>
+            <ListItem href={'#'}>Career</ListItem>
           </Stack>
         </SimpleGrid>
       </Container>

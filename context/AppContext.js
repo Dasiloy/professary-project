@@ -30,7 +30,7 @@ const AppProvider = ({ children }) => {
     setPaginate(index);
   };
 
-   console.log(sorted);
+  
 
   useEffect(() => {
     handleSorted();

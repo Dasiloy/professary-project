@@ -1,5 +1,6 @@
 import styles from './Navbar.module.css';
 import { Links } from '../../../utilis/localData';
+import { v4 as uuid } from 'uuid';
 import {
   Box,
   Flex,
@@ -17,11 +18,14 @@ import {
   CloseIcon,
   ArrowForwardIcon,
 } from '@chakra-ui/icons';
+import { useState } from 'react';
 
-const NavLink = ({ children }) => (
+const NavLink = ({ children, handleClick, id, linkId }) => (
   <Link
+    onClick={handleClick}
     px={2}
     fontSize='sm'
+    color={id === linkId ? 'primary' : ''}
     _hover={{
       textDecoration: 'none',
       color: useColorModeValue(
@@ -35,7 +39,12 @@ const NavLink = ({ children }) => (
 );
 
 export default function NavBar() {
+  const [linkId, setLinkId] = useState(null);
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const handleLinkId = id => {
+    setLinkId(id);
+  };
 
   return (
     <>
@@ -43,7 +52,7 @@ export default function NavBar() {
         bg={useColorModeValue('lightBodyBg', 'darkBodyBg')}
         maxW='container.xl'
         mx='auto'
-        px='3'>
+        className={styles.nav}>
         <Flex
           h={16}
           alignItems={'center'}
@@ -69,28 +78,21 @@ export default function NavBar() {
               as={'nav'}
               spacing={4}
               display={{ base: 'none', md: 'flex' }}>
-              {Links.map(link => (
-                <NavLink key={link}>{link}</NavLink>
+              {Links.map((link, index) => (
+                <NavLink
+                  key={link}
+                  linkId={linkId}
+                  id={index}
+                  handleClick={() => handleLinkId(index)}>
+                  {link}
+                </NavLink>
               ))}
-              <Button
-                size='md'
-                border='1px'
-                variant='outline'
-                color={useColorModeValue(
-                  ' ligghtLinkHover',
-                  ' darkLinkHover'
-                )}
-                bgColor={useColorModeValue(
-                  'lightBodyBg',
-                  'darkBodyBg'
-                )}>
+              <Button variant='primaryOutline'>
                 Log in
               </Button>
               <Button
-                size='md'
-                variant='solid'
-                rightIcon={<ArrowForwardIcon/>}
-                colorScheme='primary'>
+                variant='primary'
+                rightIcon={<ArrowForwardIcon />}>
                 Sign up
               </Button>
             </HStack>
@@ -100,9 +102,22 @@ export default function NavBar() {
         {isOpen ? (
           <Box pb={4} display={{ md: 'none' }}>
             <Stack as={'nav'} spacing={4}>
-              {Links.map(link => (
-                <NavLink key={link}>{link}</NavLink>
+              {Links.map((link, index) => (
+                <NavLink
+                  key={link}
+                  linkId={linkId}
+                  id={index}>
+                  {link}
+                </NavLink>
               ))}
+              <Box>
+                <NavLink linkId={linkId} id={uuid()}>Sign up</NavLink>
+              </Box>
+              <Box>
+                <NavLink linkId={linkId} id={uuid()}>
+                  Log in
+                </NavLink>
+              </Box>
             </Stack>
           </Box>
         ) : null}

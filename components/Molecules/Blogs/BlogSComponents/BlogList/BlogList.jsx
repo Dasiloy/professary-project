@@ -6,7 +6,6 @@ import styles from './BlogList.module.css';
 function BlogList() {
   const { sorted, paginate } = useAppContext();
   if (sorted[paginate]) {
-    console.log(sorted[paginate]);
     return (
       <Container maxW='container.xl' mt='2' mx='auto'>
         {sorted[paginate].map(blog => {

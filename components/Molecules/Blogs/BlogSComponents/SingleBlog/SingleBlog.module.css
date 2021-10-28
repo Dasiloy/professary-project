@@ -2,3 +2,28 @@
   display: block;
   width: 100%;
 }
+.author {
+  width: auto;
+}
+
+.postDate {
+ 
+}
+
+@media screen and (min-width: 768px) {
+  .author {
+    width: 32%;
+
+    padding-left: 50px;
+  }
+  .author1 {
+    width: 32%;
+  }
+  .content1 {
+    width: 60%;
+  }
+  .content {
+    padding-top: 20px;
+    width: 60%;
+  }
+}

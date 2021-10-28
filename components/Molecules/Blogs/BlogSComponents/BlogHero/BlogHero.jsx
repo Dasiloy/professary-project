@@ -24,7 +24,7 @@ export default function BlogHero() {
     imgText,
   } = hero;
   return (
-    <Container className={styles.BlogHero} maxW='full' mb='4'>
+    <Container className={styles.BlogHero} maxW='full' mb={4}>
       <Center
         color='white'
         maxW='container.xl'
@@ -42,7 +42,8 @@ export default function BlogHero() {
         bg='lightHero'
         color='black'
         boxShadow='lg'
-        px='5'
+        boxSizing='border-box'
+        px='3'
         py='2'
         maxW='container.xl'
         borderRadius='lg'
@@ -95,7 +96,7 @@ export default function BlogHero() {
             <Text color=' lightBodyText' fontSize='sm'>
               {body}
             </Text>
-            <Link href='/' className={styles.heroLink}>
+            <Link href='/'>
               <a>
                 <Text color='primary' fontSize='sm' mt='3'>
                   {'Read more '}
