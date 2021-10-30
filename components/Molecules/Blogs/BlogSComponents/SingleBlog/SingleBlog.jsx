@@ -25,21 +25,30 @@ export default function SingleBlog({
       py='5'
       maxW='container.xl'
       mx='auto'>
-      <Heading as='h5' color='primary' fontSize='xl' my='3'>
+      <Heading
+        as='h5'
+        color='primary'
+        my='3'
+        fontSize='20px'
+        fontStyle='normal'
+        fontWeight='semibold'>
         {category}
       </Heading>
       <Box>
         <Box
           my='3'
           display={{ base: 'block', md: 'flex' }}
-          alignItems={'start'}
+          alignItems={'center'}
           justifyContent={'space-between'}>
           <Heading
             as='h4'
             color='grayBlack'
-            fontSize='3xl'
+            fontSize='56px'
+            fontStyle='normal'
+            fontWeight='bold'
+            my='4'
             className={styles.content1}>
-            {`${title.substr(0, 60)}...`}
+            {`${title.substr(0, 30)}...`}
           </Heading>
           <Text
             fontSize='xs'
@@ -58,7 +67,7 @@ export default function SingleBlog({
               src={imgUrl}
               alt='hero'
               borderRadius='full'
-              boxSize='55px'
+              boxSize='76px'
             />
             <Box ml='3'>
               <Text
@@ -71,11 +80,18 @@ export default function SingleBlog({
               <Heading
                 as='h6'
                 mb='1'
-                fontSize='sm'
+                fontSize='13px'
+                fontStyle='normal'
+                fontWeight='semibold'
                 color='grayBlack'>
                 {name}
               </Heading>
-              <Text fontSize='xs'>{role}</Text>
+              <Text
+                fontSize='13px'
+                fontStyle='normal'
+                fontWeight='medium'>
+                {role}
+              </Text>
             </Box>
           </Box>
         </Box>
@@ -84,7 +100,7 @@ export default function SingleBlog({
           direction='row-reverse'
           alignItems={'start'}
           justifyContent={'space-between'}>
-          <Box className={styles.author1}>
+          <Box className={styles.img}>
             <Image
               src={blogUrl}
               alt='blog'
@@ -95,12 +111,23 @@ export default function SingleBlog({
             />
           </Box>
           <Box className={styles.content}>
-            <Text color=' lightBodyText' fontSize='sm'>
+            <Text
+              color=' lightBodyText'
+              fontSize='xl'
+              lineHeight='tall'
+              fontStyle='normal'
+              fontWeight='normal'>
               {`${body.substr(0, 250)}...`}
             </Text>
             <Link href='/'>
               <a>
-                <Text color='primary' fontSize='sm' mt='3'>
+                <Text
+                  color='primary'
+                  mt='4'
+                  mb='6'
+                  fontSize='md'
+                  fontStyle='normal'
+                  fontWeight='semibold'>
                   {'Read more '}
                   <ArrowRightIcon h={2} w={4} />
                 </Text>

@@ -2,7 +2,7 @@
   content: '';
   position: absolute;
   width: 100%;
-  height: 65%;
+  height: 100%;
   top: 0;
   left: 0;
   background: url(../../../../../assets/hero.svg);
@@ -13,6 +13,7 @@
 
 .BlogHero {
   position: relative;
+  max-height: 610px;
 }
 
 .heroImg {
@@ -22,7 +23,7 @@
 
 @media screen and (min-width: 768px) {
   .BlogHero {
-    margin-bottom: 120px !important;
+    /* margin-bottom: 120px !important; */
   }
   .heroflex {
     display: flex;
@@ -31,11 +32,13 @@
     justify-content: space-around;
   }
   .heroChild1 {
-    width: 40%;
+    width: 36rem;
     display: block;
+    height: 100%;
   }
   .heroChild2 {
-    width: 50%;
+    width: 34rem;
+    height: 100%;
   }
 }
 

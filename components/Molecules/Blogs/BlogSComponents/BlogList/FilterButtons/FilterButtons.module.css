@@ -1,0 +1,17 @@
+.filterBtn {
+  border-bottom: 2px solid #610bef !important;
+}
+
+.group {
+  width: 100%;
+  min-height: 65px;
+  display: flex;
+  align-items: center;
+}
+
+
+@media screen and (min-width:768px){
+    .group {
+         width: 40%;
+    }
+}

@@ -6,24 +6,20 @@
   width: auto;
 }
 
-.postDate {
- 
-}
-
 @media screen and (min-width: 768px) {
   .author {
     width: 32%;
-
-    padding-left: 50px;
   }
   .author1 {
-    width: 32%;
+    width: 30rem;
   }
   .content1 {
-    width: 60%;
+    width: 50rem;
   }
   .content {
-    padding-top: 20px;
-    width: 60%;
+    width: 37rem;
+  }
+  .img {
+    width: 30rem;
   }
 }

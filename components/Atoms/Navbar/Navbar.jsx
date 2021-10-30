@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import styles from './Navbar.module.css';
 import { Links } from '../../../utilis/localData';
 import { v4 as uuid } from 'uuid';
@@ -6,7 +7,7 @@ import {
   Flex,
   HStack,
   Link,
-  Text,
+  Image,
   IconButton,
   Button,
   useDisclosure,
@@ -18,11 +19,12 @@ import {
   CloseIcon,
   ArrowForwardIcon,
 } from '@chakra-ui/icons';
-import { useState } from 'react';
 
 const NavLink = ({ children, handleClick, id, linkId }) => (
   <Link
     onClick={handleClick}
+    fontWeight='600'
+    fontStyle='13px'
     px={2}
     fontSize='sm'
     color={id === linkId ? 'primary' : ''}
@@ -49,14 +51,17 @@ export default function NavBar() {
   return (
     <>
       <Box
+        minHeight='96px'
         bg={useColorModeValue('lightBodyBg', 'darkBodyBg')}
         maxW='container.xl'
         mx='auto'
         className={styles.nav}>
         <Flex
+          minHeight='96px'
           h={16}
           alignItems={'center'}
-          justifyContent={'space-between'}>
+          justifyContent={'space-between'}
+          direction='row-reverse'>
           <IconButton
             size={'md'}
             icon={
@@ -71,8 +76,15 @@ export default function NavBar() {
             className={styles.navFlex}
             alignItems={'center'}
             justifyContent={'space-between'}>
-            <Box fontSize='lg'>
-              <Text>Logo</Text>
+            <Box
+              fontSize='lg'
+              display='flex'
+              alignItems='center'>
+              <Image
+                src='/images/Logo Group.svg'
+                alt='Logo'
+                maxW='200px'
+              />
             </Box>
             <HStack
               as={'nav'}
@@ -87,11 +99,22 @@ export default function NavBar() {
                   {link}
                 </NavLink>
               ))}
-              <Button variant='primaryOutline'>
+              <Button
+                variant='primaryOutline'
+                size='sm'
+                fontWeight='600'
+                fontStyle='normal'
+                width='120px'
+                height='40px'>
                 Log in
               </Button>
               <Button
                 variant='primary'
+                width='120px'
+                height='40px'
+                fontWeight='600'
+                fontStyle='normal'
+                size='sm'
                 rightIcon={<ArrowForwardIcon />}>
                 Sign up
               </Button>
@@ -111,7 +134,9 @@ export default function NavBar() {
                 </NavLink>
               ))}
               <Box>
-                <NavLink linkId={linkId} id={uuid()}>Sign up</NavLink>
+                <NavLink linkId={linkId} id={uuid()}>
+                  Sign up
+                </NavLink>
               </Box>
               <Box>
                 <NavLink linkId={linkId} id={uuid()}>

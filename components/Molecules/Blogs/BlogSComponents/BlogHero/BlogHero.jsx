@@ -11,9 +11,8 @@ import {
 import { ArrowRightIcon } from '@chakra-ui/icons';
 import styles from './BlogHero.module.css';
 
-
 export default function BlogHero() {
-  const {hero} = useAppContext()
+  const { hero } = useAppContext();
   const {
     firstHeading,
     secondHeading,
@@ -24,7 +23,10 @@ export default function BlogHero() {
     imgText,
   } = hero;
   return (
-    <Container className={styles.BlogHero} maxW='full' mb={4}>
+    <Container
+      className={styles.BlogHero}
+      minW='full'
+      mb={[120, 96]}>
       <Center
         color='white'
         maxW='container.xl'
@@ -32,9 +34,11 @@ export default function BlogHero() {
         mx='auto'>
         <Heading
           as='h1'
-          size='4xl'
+          fontSize='120px'
+          fontStyle='normal'
           fontWeight='bold'
-          my='16'>
+          mt={20}
+          mb={10}>
           {firstHeading}
         </Heading>
       </Center>
@@ -43,35 +47,37 @@ export default function BlogHero() {
         color='black'
         boxShadow='lg'
         boxSizing='border-box'
-        px='3'
-        py='2'
+        px='2'
+        py='1'
         maxW='container.xl'
         borderRadius='lg'
         mx='auto'>
         <div className={styles.heroflex}>
-          <Box className={styles.heroChild1}>
+          <Box>
             <Image
               src={heroImg}
               alt='hero'
               size='full'
-              mt='2'
-              mb='4'
-              maxW='full'
-              className={styles.heroImg}
+              minH='full'
+              className={styles.heroChild1}
             />
           </Box>
           <Box className={styles.heroChild2}>
             <Heading
               as='h5'
+              fontSize='20px'
+              fontStyle='normal'
+              fontWeight='semibold'
               color='primary'
-              fontSize='xl'
               mt='4'>
               {secondHeading}
             </Heading>
             <Heading
               as='h3'
               color='grayBlack'
-              fontSize='3bxl'
+              fontSize='56px'
+              fontStyle='normal'
+              fontWeight='bold'
               my='4'>
               {thirdHeading}
             </Heading>
@@ -80,25 +86,43 @@ export default function BlogHero() {
                 src='/images/hero-img.jpg'
                 alt='hero'
                 borderRadius='full'
-                boxSize='40px'
+                boxSize='60px'
                 className={styles.heroImg}
               />
               <Box ml='3'>
                 <Heading
                   as='h6'
-                  fontSize='sm'
+                  fontSize='13px'
+                  fontStyle='normal'
+                  fontWeight='semibold'
                   color='grayBlack'>
                   {imgHeading}
                 </Heading>
-                <Text fontSize='xs'>{imgText}</Text>
+                <Text
+                  fontSize='13px'
+                  fontStyle='normal'
+                  fontWeight='medium'>
+                  {imgText}
+                </Text>
               </Box>
             </Box>
-            <Text color=' lightBodyText' fontSize='sm'>
+            <Text
+              color=' lightBodyText'
+              fontSize='xl'
+              lineHeight='tall'
+              fontStyle='normal'
+              fontWeight='normal'>
               {body}
             </Text>
             <Link href='/'>
               <a>
-                <Text color='primary' fontSize='sm' mt='3'>
+                <Text
+                  color='primary'
+                  mt='4'
+                  mb='6'
+                  fontSize='md'
+                  fontStyle='normal'
+                  fontWeight='semibold'>
                   {'Read more '}
                   <ArrowRightIcon h={2} w={4} />
                 </Text>
