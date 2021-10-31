@@ -7,7 +7,7 @@ import { Box } from '@chakra-ui/react';
 
 export default function BlogsFullPage() {
   return (
-    <>
+    <Box  minW='full'>
       <BlogHero />
       <Box
         className={styles.filtered}
@@ -17,6 +17,6 @@ export default function BlogsFullPage() {
         <FilterButtons />
       </Box>
       <BlogList />
-    </>
+    </Box>
   );
 }

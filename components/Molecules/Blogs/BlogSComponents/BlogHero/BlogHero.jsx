@@ -1,3 +1,4 @@
+import { Image as Img } from '@chakra-ui/image';
 import Link from 'next/link';
 import { useAppContext } from '../../../../../context/AppContext';
 import {
@@ -25,10 +26,19 @@ export default function BlogHero() {
   return (
     <Container
       className={styles.BlogHero}
-      minW='full'
+      maxW='full'
       mb={[120, 96]}>
+      <Box className={styles.svg}>
+        <Img
+          src='/images/hero.svg'
+          size='full'
+          minH='full'
+          alt='hero'
+          className={styles.img}
+        />
+      </Box>
       <Center
-        color='white'
+        color='black'
         maxW='container.xl'
         bg='transparent'
         mx='auto'>
@@ -44,15 +54,16 @@ export default function BlogHero() {
       </Center>
       <Box
         bg='lightHero'
-        color='black'
+        color='white'
         boxShadow='lg'
         boxSizing='border-box'
-        px='2'
-        py='1'
         maxW='container.xl'
         borderRadius='lg'
         mx='auto'>
-        <div className={styles.heroflex}>
+        <Box
+          className={styles.heroflex}
+          mx='auto'
+          maxW='container.xl'>
           <Box>
             <Image
               src={heroImg}
@@ -129,7 +140,7 @@ export default function BlogHero() {
               </a>
             </Link>
           </Box>
-        </div>
+        </Box>
       </Box>
     </Container>
   );
